@@ -18,7 +18,7 @@ router.post("/",async(req,res)=>{
     }
 
     try {
-        const newUser=new userModel.find()
+        const newUser=new userModel({username,email,password})
         await newUser.save()
         res.status(200).json({"message":"Successfully register"})
 
